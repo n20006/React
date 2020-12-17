@@ -20,34 +20,36 @@ const MoneyBook = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{books[0].date}</td>
-            <td>{books[0].item}</td>
-            <td>{books[0].amount}</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{books[1].date}</td>
-            <td>{books[1].item}</td>
-            <td></td>
-            <td>{books[1].amount}</td>
-          </tr>
-          <tr>
-            <td>{books[2].amount}</td>
-            <td>{books[2].amount}</td>
-            <td>{books[2].amount}</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{books[3].amount}</td>
-            <td>{books[3].amount}</td>
-            <td></td>
-            <td>{books[3].amount}</td>
-          </tr>
+          <MoneyBookItem book={books[0]} />
+          <MoneyBookItem book={books[1]} />
+          <MoneyBookItem book={books[2]} />
+          <MoneyBookItem book={books[3]} />
         </tbody>
       </table>
     </div>
   )
 }
 
+const MoneyBookItem = props => {
+  const { date, item, amount } = props.book
+  if (amount > 0) {
+    return (
+      <tr>
+        <td>{date}</td>
+        <td>{item}</td>
+        <td>{amount}</td>
+        <td></td>
+      </tr>
+    )
+  } else {
+    return (
+      <tr>
+        <td>{date}</td>
+        <td>{item}</td>
+        <td></td>
+        <td>{amount}</td>
+      </tr>
+    )
+  }
+}
 export default MoneyBook
