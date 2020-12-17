@@ -1,6 +1,12 @@
 import './App.css'
 
 const MoneyBook = () => {
+  const books = [
+    { date: '1/1', item: 'お年玉', amount: 10000 },
+    { date: '1/3', item: 'ケーキ', amount: -500 },
+    { date: '2/1', item: '小遣い', amount: 3000 },
+    { date: '2/5', item: 'マンガ', amount: -600 }
+  ]
   return (
     <div>
       <h1>小遣い帳</h1>
@@ -15,28 +21,28 @@ const MoneyBook = () => {
         </thead>
         <tbody>
           <tr>
-            <td>1/1</td>
-            <td>お年玉</td>
-            <td>10000</td>
+            <td>{books[0].date}</td>
+            <td>{books[0].item}</td>
+            <td>{books[0].amount}</td>
             <td></td>
           </tr>
           <tr>
-            <td>1/3</td>
-            <td>ケーキ</td>
+            <td>{books[1].date}</td>
+            <td>{books[1].item}</td>
             <td></td>
-            <td>500</td>
+            <td>{books[1].amount}</td>
           </tr>
           <tr>
-            <td>2/1</td>
-            <td>小遣い</td>
-            <td>3000</td>
+            <td>{books[2].amount}</td>
+            <td>{books[2].amount}</td>
+            <td>{books[2].amount}</td>
             <td></td>
           </tr>
           <tr>
-            <td>2/5</td>
-            <td>マンガ</td>
+            <td>{books[3].amount}</td>
+            <td>{books[3].amount}</td>
             <td></td>
-            <td>600</td>
+            <td>{books[3].amount}</td>
           </tr>
         </tbody>
       </table>
