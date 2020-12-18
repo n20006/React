@@ -47,7 +47,7 @@ const MoneyBookItem = props => {
         <td>{date}</td>
         <td>{item}</td>
         <td></td>
-        <td>{amount}</td>
+        <td>{-amount}</td>
       </tr>
     )
   }
