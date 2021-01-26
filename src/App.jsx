@@ -1,43 +1,31 @@
 import React from 'react'
 import './App.css'
 
-class textinput extends React.Component {
+class SumNum extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      value: '',
-      message: ''
-    }
-    this.handleInput = this.handleInput.bind(this)
-    this.send = this.send.bind(this)
-  }
-
-  handleInput ({ target: { value } }) {
-    this.setState({
-      value
-    })
-  }
-
-  sed () {
-    const value = this.state
-    this.setState({
-      value: '',
-      message: value
-    })
+    this.state = { num1: null, num2: null, sum: null }
   }
 
   render () {
     return (
-      <>
-        <input
-          type='text'
-          value={this.state.value}
-          onChange={this.handleInput.bind(this)}
-        />
-        <button onClick={this.send.bind(this)}>send</button>
-      </>
+      <div>
+        <input type='number' value={this.state.num1} />
+        +
+        <input type='number' value={this.state.num2} />
+        <button onClick={() => this.handleClick()}>
+          =
+        </button>
+      </div>
     )
+
+    handleClick() {
+      let ans = parseInt(this.state.num1) + parseInt(this.state.num2)
+      this.setState({
+        sum: ans
+      })
+    }
   }
 }
 
-export default textinput
+export default SumNum
